@@ -24,28 +24,28 @@ services:
   - docker
 
 before_install:
-  - echo docker logout
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker build -t $DOCKER_ID/frontend ./frontend
-
+  - docker build -t $DOCKER_ID/frontend-test -f ./frontend/Dockerfile.dev ./frontend
 script:
-  - docker run -e CI=true $DOCKER_ID/frontend npm run test
+  - docker run -e CI=true $DOCKER_ID/frontend-test yarn test
 
 after_success:
+  - echo docker logout
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker build -t $DOCKER_ID/backend ./backend
   - docker build -t $DOCKER_ID/frontend ./frontend
+  - docker build -t $DOCKER_ID/nginx ./nginx
   - docker push $DOCKER_ID/backend
   - docker push $DOCKER_ID/frontend
+  - docker push $DOCKER_ID/nginx
 
-# deploy:
-#   provider: elasticbeanstalk
-#   region: "ap-southeast-1"
-#   app: "multi-docker"
-#   env: MultiDocker-env
-#   bucket_name: "elasticbeanstalk-ap-southeast-1-647466573283"
-#   bucket_path: "docker-multi"
-#   on:
-#     branch: master
-#   access_key_id: "$AWS_ACCESS_KEY"
-#   secret_access_key: "$AWS_SCRET_ACCESS_KEY"
-#   edge: true
+deploy:
+  provider: elasticbeanstalk
+  region: 'ap-southeast-1'
+  app: 'hw3-cicd'
+  env: 'Hw3cicd-env'
+  bucket_name: 'elasticbeanstalk-ap-southeast-1-076949635368'
+  bucket_path: 'hw3-cicd'
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
