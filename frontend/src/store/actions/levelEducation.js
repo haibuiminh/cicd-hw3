@@ -30,7 +30,7 @@ export const createLevelEducation = title => dispatch => {
     'Content-Type': 'application/json',
     Authorization: 'Bearer ' + authToken
   };
-  const url = `http://localhost:4200/level-education/add-level-education`;
+  const url = `/api/level-education/add-level-education`;
   axios
     .post(url, levelEducationData, {
       headers

@@ -32,7 +32,7 @@ export const createLocation = (city, district) => dispatch => {
     'Content-Type': 'application/json',
     Authorization: 'Bearer ' + authToken
   };
-  const url = `http://localhost:4200/location/add-location`;
+  const url = `/api/location/add-location`;
   axios
     .post(url, locationData, {
       headers

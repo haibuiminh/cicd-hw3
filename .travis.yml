@@ -15,10 +15,10 @@ notifications:
       - haibui.dev.1996@gmail.com
     on_success: always
     on_failure: always
-  # slack:
-  #   if: branch == master
-  #   on_failure: always
-  #   on_success: always
+  slack:
+    if: branch == master
+    on_failure: always
+    on_success: always
 
 services:
   - docker
@@ -26,9 +26,10 @@ services:
 before_install:
   - echo docker logout
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker build -t $DOCKER_ID/backend ./backend
   - docker build -t $DOCKER_ID/frontend ./frontend
-  
+
+script:
+  - docker run -e CI=true $DOCKER_ID/frontend npm run test
 
 after_success:
   - docker build -t $DOCKER_ID/backend ./backend

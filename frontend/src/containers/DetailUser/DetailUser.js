@@ -27,36 +27,31 @@ class DetailUser extends Component {
           title: 'Stakeholder info',
           dataIndex: 'stakeholder',
           key: 'stakeholder',
-          render: (text, record) => {
-            return (
+          render: (text, record) => (
               <div key={record._id + 'name'}>
                 <strong>{record.nameUserContract}</strong>
                 <br />
                 <strong>{record.emailUserContract}</strong>
               </div>
-            );
-          }
+            )
         },
         {
           title: 'Time contract',
           dataIndex: 'timecontract',
           key: 'timecontract',
-          render: (text, record) => {
-            return (
+          render: (text, record) => (
               <div key={record._id + 'time'}>
                 from {record.from}
                 <br />
                 to {record.to}
               </div>
-            );
-          }
+            )
         },
         {
           title: 'Hour & price',
           dataIndex: 'ourRate',
           key: 'ourRate',
-          render: (text, record) => {
-            return (
+          render: (text, record) => (
               <div key={record._id + 'price'}>
                 <strong key={record._id + 'price1'}>
                   {record.totalHourCommit}hrs
@@ -64,20 +59,17 @@ class DetailUser extends Component {
                 <br />
                 <strong key={record._id + 'price2'}>{record.hourRate}$</strong>
               </div>
-            );
-          }
+            )
         },
         {
           title: 'Value',
           dataIndex: 'valueofcontract',
           key: 'valueofcontract',
-          render: (text, record) => {
-            return (
+          render: (text, record) => (
               <div key={record._id + 'value'}>
                 {record.totalHourCommit * record.hourRate} $
               </div>
-            );
-          }
+            )
         },
         {
           title: 'Status',
@@ -243,9 +235,7 @@ class DetailUser extends Component {
           bordered
           columns={this.state.userColumns}
           dataSource={contracts}
-          rowKey={record => {
-            return record._id;
-          }}
+          rowKey={record => record._id}
         />
       </div>
     );

@@ -10,60 +10,32 @@ import SideBar from './components/SideBar/SideBar';
 import * as actions from './store/actions/index';
 import './App.css';
 
-const asyncLogin = AsyncComponent(() => {
-  return import('./containers/auth/Login/Login');
-});
+const asyncLogin = AsyncComponent(() => import('./containers/auth/Login/Login'));
 
-const asyncRegister = AsyncComponent(() => {
-  return import('./containers/auth/Register/Register');
-});
+const asyncRegister = AsyncComponent(() => import('./containers/auth/Register/Register'));
 
-const asyncHomePage = AsyncComponent(() => {
-  return import('./containers/HomePage/HomePage');
-});
+const asyncHomePage = AsyncComponent(() => import('./containers/HomePage/HomePage'));
 
-const asyncStudent = AsyncComponent(() => {
-  return import('./containers/HomePage/HomePage');
-});
+const asyncStudent = AsyncComponent(() => import('./containers/HomePage/HomePage'));
 
-const asyncTeacher = AsyncComponent(() => {
-  return import('./containers/HomePage/HomePage');
-});
-const asyncLogout = AsyncComponent(() => {
-  return import('./containers/auth/Logout/Logout');
-});
+const asyncTeacher = AsyncComponent(() => import('./containers/HomePage/HomePage'));
+const asyncLogout = AsyncComponent(() => import('./containers/auth/Logout/Logout'));
 
-const asyncSkill = AsyncComponent(() => {
-  return import('./containers/Skill/Skill');
-});
+const asyncSkill = AsyncComponent(() => import('./containers/Skill/Skill'));
 
-const asyncLocation = AsyncComponent(() => {
-  return import('./containers/Location/Location');
-});
+const asyncLocation = AsyncComponent(() => import('./containers/Location/Location'));
 
-const asyncLevel = AsyncComponent(() => {
-  return import('./containers/Level/Level');
-});
+const asyncLevel = AsyncComponent(() => import('./containers/Level/Level'));
 
-const asyncLevelEducation = AsyncComponent(() => {
-  return import('./containers/LevelEducation/LevelEducation');
-});
+const asyncLevelEducation = AsyncComponent(() => import('./containers/LevelEducation/LevelEducation'));
 
-const asyncUserDetail = AsyncComponent(() => {
-  return import('./containers/DetailUser/DetailUser');
-});
+const asyncUserDetail = AsyncComponent(() => import('./containers/DetailUser/DetailUser'));
 
-const asyncContract = AsyncComponent(() => {
-  return import('./containers/Contract/Contract');
-});
+const asyncContract = AsyncComponent(() => import('./containers/Contract/Contract'));
 
-const asyncComplain = AsyncComponent(() => {
-  return import('./containers/Complain/Complain');
-});
+const asyncComplain = AsyncComponent(() => import('./containers/Complain/Complain'));
 
-const asyncTopUser = AsyncComponent(() => {
-  return import('./containers/TopUser/TopUser');
-});
+const asyncTopUser = AsyncComponent(() => import('./containers/TopUser/TopUser'));
 
 class App extends Component {
   componentDidMount() {

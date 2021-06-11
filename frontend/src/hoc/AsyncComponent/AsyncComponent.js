@@ -2,8 +2,7 @@ import React, {
   Component
 } from 'react';
 
-const AsyncComponent = (importComponent) => {
-  return class extends Component {
+const AsyncComponent = (importComponent) => class extends Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -29,6 +28,5 @@ const AsyncComponent = (importComponent) => {
       /> : null;
     }
   }
-}
 
 export default AsyncComponent;

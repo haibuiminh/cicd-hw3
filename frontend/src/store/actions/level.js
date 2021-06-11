@@ -30,7 +30,7 @@ export const createLevel = title => dispatch => {
     'Content-Type': 'application/json',
     Authorization: 'Bearer ' + authToken
   };
-  const url = `http://localhost:4200/level/add-level`;
+  const url = `/api/level/add-level`;
   axios
     .post(url, levelData, {
       headers

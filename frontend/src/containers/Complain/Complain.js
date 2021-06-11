@@ -129,21 +129,18 @@ class Complain extends Component {
           title: 'From to',
           dataIndex: 'timecontract',
           key: 'timecontract',
-          render: (text, record) => {
-            return (
+          render: (text, record) => (
               <div>
                 {record.contract.from} <br />
                 {record.contract.to}
               </div>
-            );
-          }
+            )
         },
         {
           title: 'Detail contract',
           dataIndex: 'hrsprice',
           key: 'hrsprice',
-          render: (text, record) => {
-            return (
+          render: (text, record) => (
               <div>
                 <strong>{record.contract.totalHourCommit + ' hrs'}</strong>
                 <br />
@@ -154,8 +151,7 @@ class Complain extends Component {
                     ' $'}
                 </strong>
               </div>
-            );
-          }
+            )
         },
         {
           title: 'Rating',
@@ -176,13 +172,11 @@ class Complain extends Component {
           title: 'Content',
           dataIndex: 'content',
           key: 'content',
-          render: (text, record) => {
-            return (
+          render: (text, record) => (
               <div>
                 <strong>{record.content}</strong>
               </div>
-            );
-          }
+            )
         },
         {
           title: 'Status',
@@ -217,8 +211,7 @@ class Complain extends Component {
           dataIndex: 'action',
           key: 'action',
           fixed: 'right',
-          render: (text, record) => {
-            return (
+          render: (text, record) => (
               <div>
                 <Popover
                   content={<div>Edit status complain</div>}
@@ -255,8 +248,7 @@ class Complain extends Component {
                   </Button>
                 </Popover>
               </div>
-            );
-          }
+            )
         }
       ]
     };
@@ -421,8 +413,7 @@ class Complain extends Component {
                 >
                   <div style={{ overflow: 'unset' }}>
                     {this.props.chatList
-                      ? this.props.chatList.map(item => {
-                          return (
+                      ? this.props.chatList.map(item => (
                             <div key={item._id + 'some'}>
                               <Text
                                 key={item._id}
@@ -441,8 +432,7 @@ class Complain extends Component {
                               </Text>
                               <Divider key={item._id + 'di'} />
                             </div>
-                          );
-                        })
+                          ))
                       : null}
                   </div>
                 </Modal>

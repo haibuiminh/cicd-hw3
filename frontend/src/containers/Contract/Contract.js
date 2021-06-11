@@ -73,42 +73,36 @@ class Contract extends Component {
           title: 'From to',
           dataIndex: 'timecontract',
           key: 'timecontract',
-          render: (text, record) => {
-            return (
+          render: (text, record) => (
               <div>
                 {record.from} <br />
                 {record.to}
               </div>
-            );
-          }
+            )
         },
         {
           title: 'hours & price',
           dataIndex: 'hrsprice',
           key: 'hrsprice',
-          render: (text, record) => {
-            return (
+          render: (text, record) => (
               <div>
                 <strong>{record.totalHourCommit + ' hrs'}</strong>
                 <br />
                 <strong>{record.hourRate + ' $'}</strong>
               </div>
-            );
-          }
+            )
         },
         {
           title: 'Value',
           dataIndex: 'value',
           key: 'value',
-          render: (text, record) => {
-            return (
+          render: (text, record) => (
               <div>
                 <strong>
                   {record.totalHourCommit * record.hourRate + ' $'}
                 </strong>
               </div>
-            );
-          }
+            )
         },
         {
           title: 'Status',
@@ -152,8 +146,7 @@ class Contract extends Component {
           title: 'action',
           dataIndex: 'action',
           key: 'action',
-          render: (text, record) => {
-            return (
+          render: (text, record) => (
               <div>
                 <Popover
                   content={<div>View detail Contract</div>}
@@ -173,8 +166,7 @@ class Contract extends Component {
                   </NavLink>
                 </Popover>
               </div>
-            );
-          }
+            )
         }
       ]
     };

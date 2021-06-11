@@ -57,7 +57,7 @@ export const login = (email, password) => dispatch => {
     email,
     password
   };
-  const url = `http://localhost:4200/admin/login'`;
+  const url = '/api/admin/login';
 
   axios
     .post(url, authData)
@@ -91,7 +91,7 @@ export const login = (email, password) => dispatch => {
 
 export const signInOauth = Oauth => dispatch => {
   dispatch(loginStart());
-  let url = `http://localhost:4200/admin/login/facebookOauth`;
+  let url = `/api/admin/login/facebookOauth`;
   const data = {
     id: Oauth.idFacebook,
     name: Oauth.name,
@@ -100,7 +100,7 @@ export const signInOauth = Oauth => dispatch => {
     accessToken: Oauth.accessToken
   };
   if (!Oauth.idFacebook) {
-    url = `http://localhost:4200/admin/login/googleOauth`;
+    url = `/api/admin/login/googleOauth`;
     data.id = Oauth.idGoole;
   }
   axios
@@ -152,7 +152,7 @@ export const register = (email, password, name) => dispatch => {
     password,
     name
   };
-  const url = `http://localhost:4200admin/register`;
+  const url = `/api/admin/register`;
   axios
     .post(url, authData)
     .then(response => {

@@ -20,7 +20,7 @@ export const getListComplainFail = error => ({
 
 export const getListComplain = () => dispatch => {
   dispatch(getListComplainStart());
-  const url = `http://localhost:4200/complain/getListComplain`;
+  const url = `/api/complain/getListComplain`;
   const authToken = localStorage.getItem('token');
   const headers = {
     'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ export const updateStatusComplain = (_id, status, content) => dispatch => {
     status,
     content
   };
-  const url = `http://localhost:4200/complain/updateStatusComplain`;
+  const url = `/api/complain/updateStatusComplain`;
   const authToken = localStorage.getItem('token');
   const headers = {
     'Content-Type': 'application/json',

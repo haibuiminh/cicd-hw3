@@ -46,13 +46,11 @@ class Location extends Component {
           key: 'district',
           render: (text, districts) => (
             <span>
-              {districts.district.map(district => {
-                return (
+              {districts.district.map(district => (
                   <Tag color={'geekblue'} key={district.name}>
                     <strong>{district.name.toUpperCase()}</strong>
                   </Tag>
-                );
-              })}
+                ))}
             </span>
           )
         },
@@ -133,9 +131,7 @@ class Location extends Component {
       confirmLoading: true
     });
     const { _id, city } = this.state;
-    const district = this.state.defaultValue.map(item => {
-      return { name: item };
-    });
+    const district = this.state.defaultValue.map(item => ({ name: item }));
     if (_id) {
       await this.props.onUpdateLocation(_id, city, district);
       this.setState({

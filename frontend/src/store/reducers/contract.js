@@ -49,14 +49,12 @@ const getStatiticsStart = state =>
     statitics: []
   });
 
-const getStatiticsSuccess = (state, action) => {
-  return updateObject(state, {
+const getStatiticsSuccess = (state, action) => updateObject(state, {
     loading: false,
     error: null,
     message: 'get success',
     statitics: action.statitics
   });
-};
 
 const getStatiticsFail = (state, action) =>
   updateObject(state, {

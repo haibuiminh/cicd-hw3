@@ -30,7 +30,7 @@ export const createSkill = title => dispatch => {
     'Content-Type': 'application/json',
     Authorization: 'Bearer ' + authToken
   };
-  const url = `http://localhost:4200/skill/add-skill`;
+  const url = `/api/skill/add-skill`;
   axios
     .post(url, skillData, {
       headers

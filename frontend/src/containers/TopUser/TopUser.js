@@ -37,8 +37,7 @@ class TopUser extends Component {
           title: 'Employee',
           dataIndex: 'employee',
           key: 'employee',
-          render: (text, record) => {
-            return (
+          render: (text, record) => (
               <div>
                 <Avatar
                   shape="square"
@@ -79,27 +78,23 @@ class TopUser extends Component {
                   />
                 </div>
               </div>
-            );
-          }
+            )
         },
         {
           title: 'Email',
           dataIndex: 'email',
           key: 'email',
-          render: (text, record) => {
-            return (
+          render: (text, record) => (
               <div>
                 <Text> {record.user.email ? record.user.email : null} </Text>
               </div>
-            );
-          }
+            )
         },
         {
           title: 'Rating',
           dataIndex: 'rating',
           key: 'rating',
-          render: (text, record) => {
-            return (
+          render: (text, record) => (
               <div>
                 <Rate
                   type=""
@@ -110,16 +105,13 @@ class TopUser extends Component {
                   style={{ fontSize: '15px', marginLeft: '0px' }}
                 />
               </div>
-            );
-          }
+            )
         },
         {
           title: 'Value',
           dataIndex: 'value',
           key: 'value',
-          render: (text, record) => {
-            return <Text strong>{record.value + ' $'}</Text>;
-          }
+          render: (text, record) => <Text strong>{record.value + ' $'}</Text>
         }
       ]
     };

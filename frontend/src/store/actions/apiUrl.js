@@ -1,1 +1,1 @@
-export const API_URL = 'https://backend-api-admin.herokuapp.com';
+export const API_URL = process.env.API_URL || 'localhost:5000'

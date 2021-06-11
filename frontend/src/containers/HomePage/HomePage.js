@@ -49,8 +49,7 @@ class HomePage extends Component {
           title: 'Employee',
           dataIndex: 'employee',
           key: 'employee',
-          render: (text, record) => {
-            return (
+          render: (text, record) => (
               <div>
                 <Avatar
                   shape="square"
@@ -87,8 +86,7 @@ class HomePage extends Component {
                   />
                 </div>
               </div>
-            );
-          }
+            )
         },
         {
           title: 'Email',
