@@ -1,0 +1,50 @@
+sudo: required
+
+language: node_js
+node_js:
+  - 12
+
+branches:
+  only:
+  - master
+  - /./
+
+notifications:
+  email:
+    recipients:
+      - haibui.dev.1996@gmail.com
+    on_success: always
+    on_failure: always
+  # slack:
+  #   if: branch == master
+  #   on_failure: always
+  #   on_success: always
+
+services:
+  - docker
+
+before_install:
+  - echo docker logout
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker build -t $DOCKER_ID/backend ./backend
+  - docker build -t $DOCKER_ID/frontend ./frontend
+  
+
+after_success:
+  - docker build -t $DOCKER_ID/backend ./backend
+  - docker build -t $DOCKER_ID/frontend ./frontend
+  - docker push $DOCKER_ID/backend
+  - docker push $DOCKER_ID/frontend
+
+# deploy:
+#   provider: elasticbeanstalk
+#   region: "ap-southeast-1"
+#   app: "multi-docker"
+#   env: MultiDocker-env
+#   bucket_name: "elasticbeanstalk-ap-southeast-1-647466573283"
+#   bucket_path: "docker-multi"
+#   on:
+#     branch: master
+#   access_key_id: "$AWS_ACCESS_KEY"
+#   secret_access_key: "$AWS_SCRET_ACCESS_KEY"
+#   edge: true
