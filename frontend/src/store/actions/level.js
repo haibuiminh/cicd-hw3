@@ -80,7 +80,7 @@ export const updateLevel = (_id, title) => dispatch => {
     'Content-Type': 'application/json',
     Authorization: 'Bearer ' + authToken
   };
-  const url = `http://localhost:4200/level/update-level`;
+  const url = `/api/level/update-level`;
   axios
     .put(url, updated, {
       headers
@@ -125,7 +125,7 @@ export const getListLevel = searchString => dispatch => {
     Authorization: 'Bearer ' + authToken
   };
   const resultSearch = searchString ? `?searchString=${searchString}` : '';
-  const url = `http://localhost:4200}/level/get-list${resultSearch}`;
+  const url = `/api}/level/get-list${resultSearch}`;
   axios
     .get(url, {
       headers
@@ -167,7 +167,7 @@ export const deleteLevel = _id => dispatch => {
     'Content-Type': 'application/json',
     Authorization: 'Bearer ' + authToken
   };
-  const url = `http://localhost:4200/level/delete-level`;
+  const url = `/api/level/delete-level`;
   axios
     .delete(url, {
       headers,
