@@ -15,7 +15,7 @@ notifications:
       - haibui.dev.1996@gmail.com
     on_success: always
     on_failure: always
-  slack:
+  slack: hw3-cicd:4AGydYWVwKwaLFRDHh7CoYRH
     if: branch == master
     on_failure: always
     on_success: always
