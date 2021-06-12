@@ -13,9 +13,13 @@ notifications:
   email:
     recipients:
       - haibui.dev.1996@gmail.com
+      - nguyenhoanganh806@gmail.com
+      - vunam1218@gmail.com
     on_success: always
     on_failure: always
-  slack:
+  slack: 
+    rooms:
+      - hw3-cicd:4AGydYWVwKwaLFRDHh7CoYRH#build-notifications
     if: branch == master
     on_failure: always
     on_success: always
