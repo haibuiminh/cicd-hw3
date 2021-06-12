@@ -34,8 +34,8 @@ before_install:
 script:
   - docker run -e CI=true $DOCKER_ID/frontend-test yarn test
   - docker run -e CI=true $DOCKER_ID/backend-test npm run test
-  - docker pull katalonstudio/katalon
-  - docker run -t --rm -v "$(pwd)":/katalon/katalon/source katalonstudio/katalon katalon-execute.sh -apiKey=$KATALON_API_KEY -browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/TS_RegressionTest"
+  # - docker pull katalonstudio/katalon
+  # - docker run -t --rm -v "$(pwd)":/katalon/katalon/source katalonstudio/katalon katalon-execute.sh -apiKey=$KATALON_API_KEY -browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/TS_RegressionTest"
 
 after_success:
   - echo docker logout
