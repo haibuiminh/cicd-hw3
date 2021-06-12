@@ -125,7 +125,7 @@ export const getListLevel = searchString => dispatch => {
     Authorization: 'Bearer ' + authToken
   };
   const resultSearch = searchString ? `?searchString=${searchString}` : '';
-  const url = `/api}/level/get-list${resultSearch}`;
+  const url = `/api/level/get-list${resultSearch}`;
   axios
     .get(url, {
       headers
