@@ -15,6 +15,7 @@ notifications:
       - haibui.dev.1996@gmail.com
       - nguyenhoanganh806@gmail.com
       - vunam1218@gmail.com
+      - tiger.fsdev@gmail.com 
     on_success: always
     on_failure: always
   slack: 
@@ -29,8 +30,10 @@ services:
 
 before_install:
   - docker build -t $DOCKER_ID/frontend-test -f ./frontend/Dockerfile.dev ./frontend
+  - docker build -t $DOCKER_ID/backend-test -f ./backend/Dockerfile.dev ./backend
 script:
   - docker run -e CI=true $DOCKER_ID/frontend-test yarn test
+  - docker run -e CI=true $DOCKER_ID/backend-test npm run test
 
 after_success:
   - echo docker logout
