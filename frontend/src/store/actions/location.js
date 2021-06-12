@@ -85,7 +85,7 @@ export const updateLocation = (_id, city, district) => dispatch => {
     'Content-Type': 'application/json',
     Authorization: 'Bearer ' + authToken
   };
-  const url = `http://localhost:4200/location/update-location/`;
+  const url = `/api/location/update-location/`;
   axios
     .put(url, updated, {
       headers
@@ -131,7 +131,7 @@ export const getListLocation = searchString => dispatch => {
     Authorization: 'Bearer ' + authToken
   };
   const resultSearch = searchString ? `?searchString=${searchString}` : '';
-  const url = `http://localhost:4200/location/get-list-location${resultSearch}`;
+  const url = `/api/location/get-list-location${resultSearch}`;
   axios
     .get(url, {
       headers
@@ -173,7 +173,7 @@ export const deleteLocation = _id => dispatch => {
     'Content-Type': 'application/json',
     Authorization: 'Bearer ' + authToken
   };
-  const url = `http://localhost:4200/location/delete-location`;
+  const url = `/api/location/delete-location`;
   axios
     .delete(url, {
       headers,
