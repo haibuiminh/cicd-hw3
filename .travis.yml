@@ -13,6 +13,8 @@ notifications:
   email:
     recipients:
       - haibui.dev.1996@gmail.com
+      - nguyenhoanganh806@gmail.com
+      - vunam1218@gmail.com
     on_success: always
     on_failure: always
   slack: 
