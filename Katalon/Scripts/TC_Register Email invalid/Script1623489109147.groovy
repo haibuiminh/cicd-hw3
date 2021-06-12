@@ -24,7 +24,7 @@ import org.openqa.selenium.WebElement
 
 WebUI.openBrowser('')
 
-WebUI.navigateToUrl('http://localhost:3000/admin/register')
+WebUI.navigateToUrl('http://hw3cicd-env.eba-iwmywpxm.ap-southeast-1.elasticbeanstalk.com/admin/register')
 
 WebUI.setText(findTestObject('Object Repository/Page_React App/input_E-mail_register_email'), 'vunam1218@')
 

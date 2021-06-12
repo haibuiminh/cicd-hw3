@@ -19,7 +19,7 @@ import org.openqa.selenium.Keys as Keys
 import com.kms.katalon.core.testobject.ConditionType as ConditionType
 WebUI.openBrowser('')
 
-WebUI.navigateToUrl('http://localhost:3000/admin/register')
+WebUI.navigateToUrl('http://hw3cicd-env.eba-iwmywpxm.ap-southeast-1.elasticbeanstalk.com/admin/register')
 
 TestObject password = new TestObject().addProperty("xpath", ConditionType.EQUALS,'//input[@id=\'register_password\']');
 TestObject confirmPassword = new TestObject().addProperty("xpath", ConditionType.EQUALS,'//input[@id=\'register_confirm\']');

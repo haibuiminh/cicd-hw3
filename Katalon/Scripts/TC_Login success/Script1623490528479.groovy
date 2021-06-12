@@ -20,7 +20,7 @@ import org.openqa.selenium.Keys as Keys
 import com.kms.katalon.core.testobject.ConditionType as ConditionType
 WebUI.openBrowser('')
 
-WebUI.navigateToUrl('http://localhost:3000/admin/login')
+WebUI.navigateToUrl('http://hw3cicd-env.eba-iwmywpxm.ap-southeast-1.elasticbeanstalk.com/admin/login')
 
 WebUI.setText(findTestObject('Object Repository/Page_React App/input_Login with Admin rule_login_email'), 'vunam123@gmail.com')
 
